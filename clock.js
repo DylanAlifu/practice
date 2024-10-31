@@ -1,5 +1,8 @@
 // ---------------------------------------- CLOCK ----------------------------------------------
 
+const border = document.getElementById("border-color");
+
+
 function clock() {
   const now = new Date();
   const canvas = document.getElementById("canvas");
@@ -21,7 +24,7 @@ function clock() {
   ctx.save();
   ctx.beginPath();
   ctx.lineWidth = 14;
-  ctx.strokeStyle = "#800000";
+  ctx.strokeStyle = border.value;
   ctx.arc(0, 0, 142, 0, Math.PI * 2, true);
   ctx.stroke();
   ctx.fill();
@@ -99,7 +102,7 @@ function clock() {
   ctx.restore();
 
   ctx.restore();
-//   requestAnimationFrame(clock);
+  requestAnimationFrame(clock);
 }
 
 requestAnimationFrame(clock);
